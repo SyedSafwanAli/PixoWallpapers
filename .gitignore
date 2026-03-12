@@ -1,0 +1,21 @@
+# Sensitive config
+wp-config.php
+
+# Uploads (large media files)
+wp-content/uploads/
+
+# Cache
+wp-content/et-cache/
+wp-content/litespeed/
+wp-content/cache/
+
+# Logs & temp
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude memory
+.claude/
