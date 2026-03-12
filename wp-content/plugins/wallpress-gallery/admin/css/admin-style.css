@@ -1,0 +1,1055 @@
+/* =========================================================
+   WallPress Gallery — Admin Styles
+   All rules scoped under .wpg-admin-wrap to avoid conflicts
+   ========================================================= */
+
+/* ── Variables ─────────────────────────────────────────── */
+.wpg-admin-wrap {
+	--wpg-admin-bg:       #0f0f13;
+	--wpg-admin-surface:  #1a1a21;
+	--wpg-admin-surface2: #222229;
+	--wpg-admin-accent:   #7fff00;
+	--wpg-admin-text:     #e8e8e8;
+	--wpg-admin-muted:    #666;
+	--wpg-admin-border:   rgba(255, 255, 255, 0.07);
+	--wpg-admin-radius:   12px;
+	--wpg-admin-danger:   #ff6b6b;
+	--wpg-admin-shadow:   0 4px 20px rgba(0, 0, 0, 0.4);
+
+	background:    var(--wpg-admin-bg);
+	color:         var(--wpg-admin-text);
+	padding:       24px;
+	min-height:    100vh;
+	font-family:   system-ui, -apple-system, sans-serif;
+	font-size:     14px;
+	line-height:   1.6;
+	margin-right:  0;
+}
+
+/* ── Dashboard Header ───────────────────────────────────── */
+.wpg-admin-header { margin-bottom: 28px; }
+
+.wpg-dash-header {
+	display:         flex;
+	align-items:     center;
+	justify-content: space-between;
+	flex-wrap:       wrap;
+	gap:             14px;
+	margin-bottom:   28px;
+	padding-bottom:  22px;
+	border-bottom:   1px solid var(--wpg-admin-border);
+}
+
+.wpg-dash-header-left {
+	display:     flex;
+	align-items: center;
+	gap:         14px;
+}
+
+.wpg-dash-header-right {
+	display:     flex;
+	gap:         10px;
+	flex-wrap:   wrap;
+	align-items: center;
+}
+
+.wpg-dash-logo {
+	display:         flex;
+	align-items:     center;
+	justify-content: center;
+	flex-shrink:     0;
+}
+
+.wpg-admin-title {
+	font-size:   22px !important;
+	font-weight: 700 !important;
+	color:       var(--wpg-admin-text) !important;
+	margin:      0 !important;
+	padding:     0 !important;
+	line-height: 1.2 !important;
+}
+
+.wpg-dash-subtitle {
+	font-size:  12px;
+	color:      var(--wpg-admin-muted);
+	margin:     2px 0 0;
+}
+
+/* ── Stats Grid (6 cols) ────────────────────────────────── */
+.wpg-stats-grid {
+	display:               grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap:                   14px;
+	margin-bottom:         22px;
+}
+
+.wpg-stat-icon-wrap {
+	width:           38px;
+	height:          38px;
+	border-radius:   10px;
+	display:         flex;
+	align-items:     center;
+	justify-content: center;
+	flex-shrink:     0;
+	margin-bottom:   12px;
+}
+
+.wpg-stat-card {
+	background:     var(--wpg-admin-surface);
+	border:         1px solid var(--wpg-admin-border);
+	border-radius:  var(--wpg-admin-radius);
+	padding:        18px 16px;
+	transition:     border-color 0.2s, transform 0.2s;
+}
+
+.wpg-stat-card:hover {
+	border-color: rgba(127, 255, 0, 0.15);
+	transform:    translateY(-1px);
+}
+
+.wpg-stat-accent {
+	border-color: rgba(127, 255, 0, 0.2);
+	background:   linear-gradient(135deg, var(--wpg-admin-surface) 0%, rgba(127,255,0,0.04) 100%);
+}
+
+/* ── Quick Nav Pills ─────────────────────────────────────── */
+.wpg-quick-nav {
+	display:       flex;
+	gap:           8px;
+	flex-wrap:     wrap;
+	margin-bottom: 28px;
+}
+
+.wpg-nav-pill {
+	display:         inline-flex;
+	align-items:     center;
+	gap:             6px;
+	padding:         7px 16px;
+	border-radius:   999px;
+	background:      var(--wpg-admin-surface);
+	border:          1px solid var(--wpg-admin-border);
+	color:           var(--wpg-admin-text) !important;
+	text-decoration: none;
+	font-size:       13px;
+	font-weight:     500;
+	transition:      all 0.2s;
+}
+
+.wpg-nav-pill:hover {
+	border-color: rgba(127, 255, 0, 0.4);
+	color:        var(--wpg-admin-accent) !important;
+	background:   rgba(127, 255, 0, 0.05);
+}
+
+.wpg-nav-pill-icon {
+	font-size: 15px;
+	opacity:   0.7;
+}
+
+/* ── Section Header ──────────────────────────────────────── */
+.wpg-section-header {
+	margin-bottom: 18px;
+}
+
+.wpg-section-title--large {
+	font-size:     17px !important;
+	margin-bottom: 4px !important;
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+}
+
+.wpg-section-desc {
+	font-size: 13px;
+	color:     var(--wpg-admin-muted);
+	margin:    0;
+}
+
+/* ── Layout Cards Grid ───────────────────────────────────── */
+.wpg-layouts-grid {
+	display:               grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap:                   16px;
+	margin-bottom:         8px;
+}
+
+.wpg-layout-card {
+	background:    var(--wpg-admin-surface);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: var(--wpg-admin-radius);
+	overflow:      hidden;
+	transition:    border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.wpg-layout-card:hover {
+	border-color: rgba(127, 255, 0, 0.25);
+	transform:    translateY(-2px);
+	box-shadow:   0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* ── Layout Preview Area ─────────────────────────────────── */
+.wpg-layout-preview {
+	position:      relative;
+	height:        130px;
+	background:    #0d0d11;
+	padding:       14px;
+	overflow:      hidden;
+	display:       flex;
+	align-items:   center;
+	justify-content: center;
+}
+
+.wpg-layout-badge {
+	position:      absolute;
+	top:           10px;
+	right:         10px;
+	font-size:     10px;
+	font-weight:   700;
+	padding:       3px 9px;
+	border-radius: 999px;
+	border:        1px solid;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+}
+
+/* ── Layout Preview Photo Cells ──────────────────────────── */
+
+/* Shared photo cell base */
+.wpg-lp-photo {
+	border-radius: 5px;
+	overflow:      hidden;
+	position:      relative;
+}
+
+/* Column helper */
+.wpg-lp-col {
+	display:        flex;
+	flex-direction: column;
+	gap:            5px;
+	flex:           1;
+}
+
+/* Uniform: 2-row × 4-col landscape grid */
+.wpg-lp-uniform-grid {
+	display:               grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:                   5px;
+	width:                 100%;
+}
+
+.wpg-lp-photo--land {
+	height: 44px;
+}
+
+/* Masonry: 4 columns with staggered heights */
+.wpg-lp-masonry-grid {
+	display: flex;
+	gap:     5px;
+	width:   100%;
+	align-items: flex-start;
+}
+
+/* Portrait: 5 tall cells */
+.wpg-lp-portrait-grid {
+	display: flex;
+	gap:     5px;
+	width:   100%;
+	align-items: stretch;
+}
+
+.wpg-lp-photo--tall {
+	flex:   1;
+	height: 100px;
+}
+
+/* Natural: 4 columns organic heights */
+.wpg-lp-natural-grid {
+	display:     flex;
+	gap:         5px;
+	width:       100%;
+	align-items: flex-start;
+}
+
+/* Spotlight: hero left + 2×2 right */
+.wpg-lp-spotlight-grid {
+	display:     flex;
+	gap:         5px;
+	width:       100%;
+	align-items: stretch;
+}
+
+.wpg-lp-photo--hero {
+	flex:          0 0 54%;
+	height:        100px;
+}
+
+.wpg-lp-sub-grid {
+	flex:    1;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap:     5px;
+}
+
+/* Filmstrip: horizontal row */
+.wpg-lp-filmstrip-row {
+	display:  flex;
+	gap:      6px;
+	width:    100%;
+	overflow: hidden;
+}
+
+.wpg-lp-photo--film {
+	flex:    0 0 70px;
+	height:  54px;
+}
+
+.wpg-lp-photo--peek {
+	flex:    0 0 35px;
+	opacity: 0.45;
+}
+
+/* ── Layout Info ─────────────────────────────────────────── */
+.wpg-layout-info {
+	padding: 14px 16px 16px;
+}
+
+.wpg-layout-name {
+	display:     flex;
+	align-items: center;
+	gap:         8px;
+	font-size:   14px;
+	font-weight: 700;
+	color:       var(--wpg-admin-text);
+	margin-bottom: 5px;
+}
+
+.wpg-layout-dot {
+	width:         8px;
+	height:        8px;
+	border-radius: 50%;
+	flex-shrink:   0;
+}
+
+.wpg-layout-desc {
+	font-size:     12px;
+	color:         var(--wpg-admin-muted);
+	margin:        0 0 12px;
+	line-height:   1.5;
+}
+
+.wpg-layout-sc-wrap {
+	display:       flex;
+	align-items:   center;
+	gap:           6px;
+	background:    var(--wpg-admin-surface2);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: 7px;
+	padding:       6px 10px;
+	overflow:      hidden;
+}
+
+.wpg-layout-sc {
+	flex:          1;
+	font-family:   'Courier New', monospace;
+	font-size:     11px;
+	color:         var(--wpg-admin-accent);
+	white-space:   nowrap;
+	overflow:      hidden;
+	text-overflow: ellipsis;
+	background:    transparent;
+}
+
+.wpg-copy-btn {
+	background:  none;
+	border:      none;
+	color:       var(--wpg-admin-muted);
+	cursor:      pointer;
+	padding:     2px 4px;
+	border-radius: 4px;
+	display:     flex;
+	align-items: center;
+	transition:  color 0.2s, background 0.2s;
+	flex-shrink: 0;
+}
+
+.wpg-copy-btn:hover {
+	color:       var(--wpg-admin-accent);
+	background:  rgba(127, 255, 0, 0.08);
+}
+
+.wpg-copy-btn--done {
+	color: var(--wpg-admin-accent);
+}
+
+/* ── Dash Section Head ───────────────────────────────────── */
+.wpg-dash-section-head {
+	display:         flex;
+	align-items:     center;
+	justify-content: space-between;
+	margin-bottom:   16px;
+}
+
+.wpg-dash-section-head .wpg-section-title {
+	margin: 0;
+	border: none;
+	padding: 0;
+}
+
+.wpg-dash-view-all {
+	font-size:       12px;
+	color:           var(--wpg-admin-muted);
+	text-decoration: none;
+	transition:      color 0.2s;
+}
+
+.wpg-dash-view-all:hover {
+	color: var(--wpg-admin-accent);
+}
+
+/* ── Recent Thumbs Grid ──────────────────────────────────── */
+.wpg-recent-thumbs {
+	display:               grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap:                   10px;
+}
+
+.wpg-recent-thumb-item {
+	position:        relative;
+	border-radius:   8px;
+	overflow:        hidden;
+	aspect-ratio:    16 / 10;
+	display:         block;
+	background:      var(--wpg-admin-surface2);
+	text-decoration: none;
+	transition:      transform 0.2s;
+}
+
+.wpg-recent-thumb-item:hover {
+	transform: scale(1.02);
+}
+
+.wpg-recent-thumb-item img {
+	width:      100%;
+	height:     100%;
+	object-fit: cover;
+	display:    block;
+}
+
+.wpg-recent-thumb-empty {
+	width:      100%;
+	height:     100%;
+	background: var(--wpg-admin-surface2);
+}
+
+.wpg-recent-thumb-overlay {
+	position:       absolute;
+	inset:          0;
+	background:     linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+	display:        flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding:        8px;
+	opacity:        0;
+	transition:     opacity 0.2s;
+}
+
+.wpg-recent-thumb-item:hover .wpg-recent-thumb-overlay {
+	opacity: 1;
+}
+
+.wpg-recent-thumb-title {
+	color:       #fff;
+	font-size:   11px;
+	font-weight: 600;
+	line-height: 1.3;
+	display:     block;
+}
+
+.wpg-recent-thumb-meta {
+	color:     rgba(255,255,255,0.55);
+	font-size: 10px;
+	display:   block;
+	margin-top: 2px;
+}
+
+/* ── Empty State ─────────────────────────────────────────── */
+.wpg-empty-state {
+	grid-column: 1 / -1;
+	text-align:  center;
+	padding:     32px 20px;
+	color:       var(--wpg-admin-muted);
+}
+
+.wpg-empty-icon {
+	font-size:     36px;
+	margin-bottom: 8px;
+	opacity:       0.4;
+}
+
+/* ── Bar Chart (updated with rank) ──────────────────────── */
+.wpg-bar-rank {
+	font-size:   11px;
+	font-weight: 700;
+	color:       var(--wpg-admin-muted);
+	width:       16px;
+	text-align:  center;
+	flex-shrink: 0;
+}
+
+/* ── System Info ─────────────────────────────────────────── */
+.wpg-sysinfo-rows {
+	display:        flex;
+	flex-direction: column;
+	gap:            0;
+}
+
+.wpg-sysinfo-row {
+	display:         flex;
+	align-items:     center;
+	justify-content: space-between;
+	padding:         8px 0;
+	border-bottom:   1px solid var(--wpg-admin-border);
+	font-size:       13px;
+}
+
+.wpg-sysinfo-row:last-child {
+	border-bottom: none;
+}
+
+.wpg-sysinfo-label {
+	color: var(--wpg-admin-muted);
+}
+
+.wpg-sysinfo-val {
+	color: var(--wpg-admin-text);
+}
+
+.wpg-sysinfo-badge {
+	padding:       3px 10px;
+	border-radius: 999px;
+	font-size:     11px;
+	font-weight:   600;
+}
+
+.wpg-sysinfo-badge--green {
+	background: rgba(127, 255, 0, 0.1);
+	color:      var(--wpg-admin-accent);
+}
+
+.wpg-sysinfo-badge--red {
+	background: rgba(255, 60, 60, 0.1);
+	color:      var(--wpg-admin-danger);
+}
+
+.wpg-sysinfo-badge--yellow {
+	background: rgba(255, 200, 0, 0.1);
+	color:      #ffc800;
+}
+
+/* ── Section Titles ─────────────────────────────────────── */
+.wpg-section-title {
+	font-size:     15px;
+	font-weight:   700;
+	color:         var(--wpg-admin-text);
+	margin:        0 0 18px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid var(--wpg-admin-border);
+}
+
+/* ── Card Panel ─────────────────────────────────────────── */
+.wpg-card-panel {
+	background:    var(--wpg-admin-surface);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: var(--wpg-admin-radius);
+	padding:       22px 24px;
+	margin-bottom: 20px;
+}
+
+/* ── Stats Grid ─────────────────────────────────────────── */
+.wpg-stats-grid {
+	display:               grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:                   16px;
+	margin-bottom:         24px;
+}
+
+.wpg-stat-card {
+	background:     var(--wpg-admin-surface);
+	border:         1px solid var(--wpg-admin-border);
+	border-radius:  var(--wpg-admin-radius);
+	padding:        22px 20px;
+	position:       relative;
+	overflow:       hidden;
+	transition:     border-color 0.2s;
+}
+
+.wpg-stat-card:hover {
+	border-color: rgba(127, 255, 0, 0.2);
+}
+
+.wpg-stat-number {
+	font-size:   32px;
+	font-weight: 800;
+	color:       var(--wpg-admin-accent);
+	line-height: 1.1;
+	margin-bottom: 4px;
+}
+
+.wpg-stat-label {
+	font-size:      12px;
+	color:          var(--wpg-admin-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+}
+
+.wpg-stat-icon {
+	position:    absolute;
+	right:       16px;
+	top:         16px;
+	font-size:   28px;
+	opacity:     0.15;
+}
+
+/* ── Quick Links ────────────────────────────────────────── */
+.wpg-quick-links {
+	display:         flex;
+	gap:             10px;
+	flex-wrap:       wrap;
+	margin-bottom:   28px;
+	align-items:     center;
+}
+
+/* ── Dashboard Cols ─────────────────────────────────────── */
+.wpg-dashboard-cols {
+	display:               grid;
+	grid-template-columns: 1fr 380px;
+	gap:                   20px;
+}
+
+.wpg-dash-section {
+	background:    var(--wpg-admin-surface);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: var(--wpg-admin-radius);
+	padding:       22px 24px;
+}
+
+/* ── Bar Chart (CSS only) ───────────────────────────────── */
+.wpg-bar-chart {
+	display:        flex;
+	flex-direction: column;
+	gap:            12px;
+}
+
+.wpg-bar-row {
+	display:     grid;
+	grid-template-columns: 20px 110px 1fr 52px;
+	gap:         8px;
+	align-items: center;
+}
+
+.wpg-bar-label {
+	font-size:       12px;
+	color:           var(--wpg-admin-text);
+	text-decoration: none;
+	white-space:     nowrap;
+	overflow:        hidden;
+	text-overflow:   ellipsis;
+}
+
+.wpg-bar-label:hover {
+	color: var(--wpg-admin-accent);
+}
+
+.wpg-bar-track {
+	background:    var(--wpg-admin-surface2);
+	border-radius: 999px;
+	height:        8px;
+	overflow:      hidden;
+}
+
+.wpg-bar-fill {
+	height:        100%;
+	background:    var(--wpg-admin-accent);
+	border-radius: 999px;
+	transition:    width 0.5s ease;
+}
+
+.wpg-bar-value {
+	font-size:  12px;
+	color:      var(--wpg-admin-muted);
+	text-align: right;
+}
+
+/* ── Table ──────────────────────────────────────────────── */
+.wpg-table-wrap {
+	overflow-x: auto;
+}
+
+.wpg-admin-table {
+	width:           100%;
+	border-collapse: collapse;
+}
+
+.wpg-admin-table th {
+	background:     var(--wpg-admin-surface2);
+	padding:        10px 14px;
+	font-size:      11px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	color:          var(--wpg-admin-muted);
+	text-align:     left;
+	white-space:    nowrap;
+	border-bottom:  1px solid var(--wpg-admin-border);
+}
+
+.wpg-admin-table td {
+	padding:       10px 14px;
+	border-bottom: 1px solid var(--wpg-admin-border);
+	color:         var(--wpg-admin-text);
+	font-size:     13px;
+	vertical-align: middle;
+}
+
+.wpg-admin-table tr:last-child td {
+	border-bottom: none;
+}
+
+.wpg-admin-table tbody tr:hover td {
+	background: rgba(255, 255, 255, 0.02);
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.wpg-btn {
+	display:         inline-block;
+	padding:         8px 18px;
+	border-radius:   8px;
+	font-size:       13px;
+	cursor:          pointer;
+	transition:      all 0.2s;
+	font-weight:     500;
+	text-decoration: none;
+	border:          none;
+	line-height:     1.4;
+	text-align:      center;
+	font-family:     inherit;
+}
+
+.wpg-btn-primary {
+	background:  var(--wpg-admin-accent);
+	color:       #111 !important;
+	font-weight: 700;
+}
+
+.wpg-btn-primary:hover {
+	background: #6be500;
+	color:      #111 !important;
+}
+
+.wpg-btn-secondary {
+	background: var(--wpg-admin-surface2);
+	color:      var(--wpg-admin-text) !important;
+	border:     1px solid var(--wpg-admin-border);
+}
+
+.wpg-btn-secondary:hover {
+	border-color: rgba(127, 255, 0, 0.3);
+	color:        var(--wpg-admin-accent) !important;
+}
+
+.wpg-btn-danger {
+	background: rgba(255, 60, 60, 0.1);
+	color:      var(--wpg-admin-danger) !important;
+	border:     1px solid rgba(255, 60, 60, 0.2);
+}
+
+.wpg-btn-danger:hover {
+	background: rgba(255, 60, 60, 0.2);
+}
+
+/* ── Forms ──────────────────────────────────────────────── */
+.wpg-input,
+.wpg-select {
+	background:    var(--wpg-admin-surface2);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: 8px;
+	padding:       9px 14px;
+	color:         var(--wpg-admin-text);
+	font-size:     13px;
+	outline:       none;
+	width:         100%;
+	box-sizing:    border-box;
+	font-family:   inherit;
+	transition:    border-color 0.2s;
+}
+
+.wpg-input:focus,
+.wpg-select:focus {
+	border-color: rgba(127, 255, 0, 0.4);
+}
+
+.wpg-input::placeholder {
+	color: var(--wpg-admin-muted);
+}
+
+textarea.wpg-input {
+	resize: vertical;
+	min-height: 80px;
+}
+
+.wpg-field-group {
+	margin-bottom: 16px;
+}
+
+.wpg-field-group label {
+	display:       block;
+	margin-bottom: 6px;
+	font-size:     13px;
+	color:         var(--wpg-admin-text);
+	font-weight:   500;
+}
+
+/* ── Filter Row ─────────────────────────────────────────── */
+.wpg-filter-row {
+	display:       flex;
+	gap:           10px;
+	align-items:   center;
+	flex-wrap:     wrap;
+	margin-bottom: 14px;
+}
+
+/* ── Bulk Row ───────────────────────────────────────────── */
+.wpg-bulk-row {
+	display:       flex;
+	gap:           8px;
+	align-items:   center;
+	margin-bottom: 14px;
+}
+
+/* ── Progress Bar ───────────────────────────────────────── */
+.wpg-progress {
+	background:    var(--wpg-admin-surface2);
+	border-radius: 999px;
+	height:        8px;
+	overflow:      hidden;
+}
+
+.wpg-progress-fill {
+	height:        100%;
+	background:    var(--wpg-admin-accent);
+	border-radius: 999px;
+	transition:    width 0.3s ease;
+}
+
+/* ── Drop Zone ──────────────────────────────────────────── */
+.wpg-dropzone {
+	border:        2px dashed rgba(255, 255, 255, 0.15);
+	border-radius: var(--wpg-admin-radius);
+	padding:       56px 40px;
+	text-align:    center;
+	transition:    all 0.2s;
+	cursor:        pointer;
+	user-select:   none;
+}
+
+.wpg-dropzone:hover,
+.wpg-dropzone.dragover {
+	border-color: var(--wpg-admin-accent);
+	background:   rgba(127, 255, 0, 0.04);
+}
+
+/* ── File List ──────────────────────────────────────────── */
+.wpg-file-list {
+	display:        flex;
+	flex-direction: column;
+	gap:            8px;
+}
+
+.wpg-file-item {
+	display:       flex;
+	align-items:   center;
+	gap:           12px;
+	background:    var(--wpg-admin-surface);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: 8px;
+	padding:       10px 14px;
+	font-size:     13px;
+}
+
+.wpg-file-item-name {
+	flex: 1;
+	color: var(--wpg-admin-text);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.wpg-file-item-size {
+	color:      var(--wpg-admin-muted);
+	font-size:  12px;
+	white-space: nowrap;
+}
+
+.wpg-file-item-status {
+	font-size: 16px;
+	min-width: 20px;
+	text-align: center;
+}
+
+.wpg-file-item-remove {
+	background: none;
+	border:     none;
+	color:      var(--wpg-admin-muted);
+	cursor:     pointer;
+	font-size:  16px;
+	line-height: 1;
+	padding:    0 4px;
+	transition: color 0.2s;
+}
+
+.wpg-file-item-remove:hover {
+	color: var(--wpg-admin-danger);
+}
+
+/* ── Categories Layout ──────────────────────────────────── */
+.wpg-cat-layout {
+	display:               grid;
+	grid-template-columns: 380px 1fr;
+	gap:                   20px;
+	align-items:           start;
+}
+
+/* ── Settings Table ─────────────────────────────────────── */
+.wpg-settings-table {
+	width:           100%;
+	border-collapse: collapse;
+}
+
+.wpg-settings-table th {
+	text-align:  left;
+	padding:     12px 0;
+	font-weight: 600;
+	font-size:   13px;
+	color:       var(--wpg-admin-text);
+	width:       220px;
+	vertical-align: top;
+	padding-top: 14px;
+}
+
+.wpg-settings-table td {
+	padding:  10px 0;
+	font-size: 13px;
+}
+
+.wpg-settings-table td input[type="text"],
+.wpg-settings-table td input[type="number"],
+.wpg-settings-table td select {
+	background:    var(--wpg-admin-surface2);
+	border:        1px solid var(--wpg-admin-border);
+	border-radius: 8px;
+	padding:       8px 12px;
+	color:         var(--wpg-admin-text);
+	font-size:     13px;
+	outline:       none;
+}
+
+.wpg-settings-table td input[type="text"]:focus,
+.wpg-settings-table td input[type="number"]:focus,
+.wpg-settings-table td select:focus {
+	border-color: rgba(127, 255, 0, 0.4);
+}
+
+.wpg-settings-table td input[type="checkbox"] {
+	width:  18px;
+	height: 18px;
+	cursor: pointer;
+	accent-color: var(--wpg-admin-accent);
+}
+
+.wpg-settings-table .description {
+	color:     var(--wpg-admin-muted);
+	font-size: 12px;
+	margin:    4px 0 0;
+}
+
+/* ── Notices ────────────────────────────────────────────── */
+.wpg-notice {
+	padding:       12px 16px;
+	border-radius: 8px;
+	margin-bottom: 16px;
+	font-size:     13px;
+}
+
+.wpg-notice-success {
+	background:   rgba(127, 255, 0, 0.1);
+	border:       1px solid rgba(127, 255, 0, 0.3);
+	color:        var(--wpg-admin-accent);
+}
+
+.wpg-notice-error {
+	background:   rgba(255, 60, 60, 0.1);
+	border:       1px solid rgba(255, 60, 60, 0.2);
+	color:        var(--wpg-admin-danger);
+}
+
+/* ── Settings form submit ───────────────────────────────── */
+.wpg-settings-form .submit {
+	margin-top: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1400px) {
+	.wpg-stats-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 1200px) {
+	.wpg-stats-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	.wpg-layouts-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.wpg-dashboard-cols {
+		grid-template-columns: 1fr;
+	}
+	.wpg-dash-header {
+		flex-direction: column;
+		align-items:    flex-start;
+	}
+}
+
+@media (max-width: 960px) {
+	.wpg-recent-thumbs {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 900px) {
+	.wpg-cat-layout {
+		grid-template-columns: 1fr;
+	}
+	.wpg-layouts-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.wpg-admin-wrap {
+		padding: 16px;
+	}
+	.wpg-stats-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.wpg-layouts-grid {
+		grid-template-columns: 1fr;
+	}
+	.wpg-recent-thumbs {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.wpg-bar-row {
+		grid-template-columns: 20px 90px 1fr 44px;
+	}
+	.wpg-quick-nav {
+		gap: 6px;
+	}
+}
