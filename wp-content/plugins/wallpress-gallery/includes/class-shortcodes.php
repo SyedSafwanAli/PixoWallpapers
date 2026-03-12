@@ -828,10 +828,12 @@ class WPG_Shortcodes {
 	//   [wpg_categories_grid columns="4" orderby="name" order="ASC"]
 	public static function sc_categories_grid( $user_atts ) {
 		$atts = shortcode_atts( [
-			'columns' => 4,
-			'orderby' => 'count',
-			'order'   => 'DESC',
-			'limit'   => 0,       // 0 = all
+			'columns'     => 4,
+			'orderby'     => 'count',
+			'order'       => 'DESC',
+			'limit'       => 0,       // 0 = all
+			'heading'     => __( 'Browse Categories', 'wallpress-gallery' ),
+			'description' => __( 'Explore our wallpaper collection organized by category. Find the perfect wallpaper for every mood and style.', 'wallpress-gallery' ),
 		], $user_atts );
 
 		$allowed_orderby = [ 'count', 'name', 'slug', 'term_id' ];
@@ -855,7 +857,16 @@ class WPG_Shortcodes {
 
 		ob_start();
 		?>
-		<div class="wpg-cat-grid" style="--wpg-cat-cols:<?php echo absint( $atts['columns'] ); ?>;">
+		<div class="wpg-cat-grid-wrap">
+			<?php if ( ! empty( $atts['heading'] ) ) : ?>
+			<div class="wpg-section-header">
+				<h2 class="wpg-section-title"><?php echo esc_html( $atts['heading'] ); ?></h2>
+				<?php if ( ! empty( $atts['description'] ) ) : ?>
+				<p class="wpg-section-desc"><?php echo esc_html( $atts['description'] ); ?></p>
+				<?php endif; ?>
+			</div>
+			<?php endif; ?>
+			<div class="wpg-cat-grid" style="--wpg-cat-cols:<?php echo absint( $atts['columns'] ); ?>;">
 			<?php foreach ( $cats as $cat ) :
 				$thumb_id = get_term_meta( $cat->term_id, 'wpg_cat_thumbnail', true );
 				$img_url  = $thumb_id ? wp_get_attachment_image_url( absint( $thumb_id ), 'large' ) : '';
@@ -878,7 +889,8 @@ class WPG_Shortcodes {
 				</div>
 			</a>
 			<?php endforeach; ?>
-		</div>
+			</div><!-- .wpg-cat-grid -->
+		</div><!-- .wpg-cat-grid-wrap -->
 		<?php
 		return ob_get_clean();
 	}
